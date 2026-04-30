@@ -380,15 +380,33 @@
     /* ── EXIF bar ── */
     .exif-bar {
       display: flex;
-      align-items: center;
-      gap: 12px;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 20px;
       flex-wrap: wrap;
-      justify-content: center;
       padding: 12px 20px;
       border: 1px solid var(--border);
       background: rgba(0,245,255,0.03);
       width: 100%;
-      max-width: 700px;
+      max-width: 900px;
+    }
+
+    .exif-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .exif-gear {
+      justify-content: flex-start;
+      flex: 1 1 260px;
+    }
+
+    .exif-settings {
+      flex: 0 1 auto;
     }
 
     .exif-item {
@@ -428,7 +446,16 @@
 
     @media (max-width: 560px) {
       .exif-divider { display: none; }
-      .exif-bar { gap: 16px; }
+      .exif-bar {
+        gap: 16px;
+        justify-content: center;
+      }
+      .exif-group {
+        justify-content: center;
+      }
+      .exif-gear {
+        justify-content: center;
+      }
     }
 
     /* ── Footer ── */
@@ -469,7 +496,16 @@
       }
       .nav-links { gap: 14px; flex-wrap: wrap; }
       .exif-divider { display: none; }
-      .exif-bar { gap: 16px; }
+      .exif-bar {
+        gap: 16px;
+        justify-content: center;
+      }
+      .exif-group {
+        justify-content: center;
+      }
+      .exif-gear {
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -652,15 +688,18 @@
       </div>
       <!-- Camera settings panel -->
       <div class="exif-bar" id="lightboxExif">
-        <span class="exif-item"><span class="exif-label">APERTURE</span><span class="exif-value" id="exifAperture">—</span></span>
-        <span class="exif-divider">·</span>
-        <span class="exif-item"><span class="exif-label">SHUTTER</span><span class="exif-value" id="exifShutter">—</span></span>
-        <span class="exif-divider">·</span>
-        <span class="exif-item"><span class="exif-label">ISO</span><span class="exif-value" id="exifIso">—</span></span>
-        <span class="exif-divider">·</span>
-        <span class="exif-item"><span class="exif-label">FOCAL</span><span class="exif-value" id="exifFocal">—</span></span>
-        <span class="exif-divider">·</span>
-        <span class="exif-item exif-camera"><span class="exif-label">CAMERA</span><span class="exif-value" id="exifCamera">—</span></span>
+        <div class="exif-group exif-settings">
+          <span class="exif-item"><span class="exif-label">APERTURE</span><span class="exif-value" id="exifAperture">—</span></span>
+          <span class="exif-divider">·</span>
+          <span class="exif-item"><span class="exif-label">SHUTTER</span><span class="exif-value" id="exifShutter">—</span></span>
+          <span class="exif-divider">·</span>
+          <span class="exif-item"><span class="exif-label">ISO</span><span class="exif-value" id="exifIso">—</span></span>
+          <span class="exif-divider">·</span>
+          <span class="exif-item"><span class="exif-label">FOCAL</span><span class="exif-value" id="exifFocal">—</span></span>
+        </div>
+        <div class="exif-group exif-gear">
+          <span class="exif-item exif-camera"><span class="exif-label">CAMERA / LENS</span><span class="exif-value" id="exifCamera">—</span></span>
+        </div>
       </div>
     </div>
   </div>
