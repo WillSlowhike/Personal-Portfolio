@@ -234,8 +234,13 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.4s ease, filter 0.3s ease;
+      transition: transform 0.4s ease, filter 0.3s ease, opacity 0.4s ease;
       filter: brightness(0.85) saturate(0.9);
+      opacity: 0;
+    }
+
+    .photo-item img.loaded {
+      opacity: 1;
     }
 
     .photo-item:hover img {
@@ -510,7 +515,7 @@
       <!-- data-aperture, data-shutter, data-iso, data-focal, data-camera: fill in your settings -->
       <div class="photo-item" data-category="nature" data-title="Your Title" data-date="2025"
           data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
-        <img src="Photos/_DSC0843.jpg" alt="Your Title" loading="lazy" />
+        <img src="../Photos/_DSC0843.jpg" alt="Your Title" loading="lazy" />
         <div class="photo-overlay">
           <p class="photo-title">Your Title</p>
           <p class="photo-meta">2025 · Nature</p>
@@ -519,7 +524,7 @@
       <!-- Photo 2 -->
       <div class="photo-item" data-category="urban" data-title="Your Title" data-date="2025"
            data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
-        <img src="Photos/_DSC0864.jpg" alt="Your Title" loading="lazy" />
+        <img src="../Photos/_DSC0864.jpg" alt="Your Title" loading="lazy" />
         <div class="photo-overlay">
           <p class="photo-title">Your Title</p>
           <p class="photo-meta">2025 · Urban</p>
@@ -528,7 +533,7 @@
       <!-- Photo 3 -->
       <div class="photo-item" data-category="people" data-title="Your Title" data-date="2025"
            data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
-        <img src="Photos/_DSC0869.jpg" alt="Your Title" loading="lazy" />
+        <img src="../Photos/_DSC0869.jpg" alt="Your Title" loading="lazy" />
         <div class="photo-overlay">
           <p class="photo-title">Your Title</p>
           <p class="photo-meta">2025 · People</p>
@@ -537,7 +542,7 @@
       <!-- Photo 4 -->
       <div class="photo-item" data-category="nature" data-title="Your Title" data-date="2025"
            data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
-        <img src="Photos/_DSC0901.jpg" alt="Your Title" loading="lazy" />
+        <img src="../Photos/_DSC0901.jpg" alt="Your Title" loading="lazy" />
         <div class="photo-overlay">
           <p class="photo-title">Your Title</p>
           <p class="photo-meta">2025 · Nature</p>
@@ -546,7 +551,7 @@
       <!-- Photo 5 -->
       <div class="photo-item" data-category="urban" data-title="Your Title" data-date="2025"
            data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
-        <img src="Photos/_DSC0944.jpg" alt="Your Title" loading="lazy" />
+        <img src="../Photos/_DSC0944.jpg" alt="Your Title" loading="lazy" />
         <div class="photo-overlay">
           <p class="photo-title">Your Title</p>
           <p class="photo-meta">2025 · Urban</p>
@@ -555,7 +560,7 @@
       <!-- Photo 6 -->
       <div class="photo-item" data-category="people" data-title="Your Title" data-date="2025"
            data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
-        <img src="Photos/_DSC0957.jpg" alt="Your Title" loading="lazy" />
+        <img src="../Photos/_DSC0957.jpg" alt="Your Title" loading="lazy" />
         <div class="photo-overlay">
           <p class="photo-title">Your Title</p>
           <p class="photo-meta">2025 · People</p>
@@ -564,7 +569,7 @@
       <!-- Photo 7 -->
             <div class="photo-item" data-category="urban" data-title="Your Title" data-date="2025"
            data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
-        <img src="Photos/_DSC1054.jpg" alt="Your Title" loading="lazy" />
+        <img src="../Photos/_DSC1054.jpg" alt="Your Title" loading="lazy" />
         <div class="photo-overlay">
           <p class="photo-title">Your Title</p>
           <p class="photo-meta">2025 · Urban</p>
@@ -573,7 +578,7 @@
       <!-- Photo 8 -->
             <div class="photo-item" data-category="urban" data-title="Your Title" data-date="2025"
            data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
-        <img src="Photos/_DSC1091.jpg" alt="Your Title" loading="lazy" />
+        <img src="../Photos/_DSC1091.jpg" alt="Your Title" loading="lazy" />
         <div class="photo-overlay">
           <p class="photo-title">Your Title</p>
           <p class="photo-meta">2025 · Urban</p>
@@ -582,7 +587,7 @@
       <!-- Photo 9 -->
             <div class="photo-item" data-category="urban" data-title="Your Title" data-date="2025"
            data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
-        <img src="Photos/_DSC1140.jpg" alt="Your Title" loading="lazy" />
+        <img src="../Photos/_DSC1140.jpg" alt="Your Title" loading="lazy" />
         <div class="photo-overlay">
           <p class="photo-title">Your Title</p>
           <p class="photo-meta">2025 · Urban</p>
@@ -591,7 +596,7 @@
       <!-- Photo 10 -->
             <div class="photo-item" data-category="urban" data-title="Your Title" data-date="2025"
            data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
-        <img src="Photos/_DSC1178.jpg" alt="Your Title" loading="lazy" />
+        <img src="../Photos/_DSC1178.jpg" alt="Your Title" loading="lazy" />
         <div class="photo-overlay">
           <p class="photo-title">Your Title</p>
           <p class="photo-meta">2025 · Urban</p>
@@ -600,7 +605,7 @@
       <!-- Photo 11 -->
             <div class="photo-item" data-category="urban" data-title="Your Title" data-date="2025"
            data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
-        <img src="Photos/_DSC1241.jpg" alt="Your Title" loading="lazy" />
+        <img src="../Photos/_DSC1241.jpg" alt="Your Title" loading="lazy" />
         <div class="photo-overlay">
           <p class="photo-title">Your Title</p>
           <p class="photo-meta">2025 · Urban</p>
@@ -609,7 +614,7 @@
       <!-- Photo 12 -->
             <div class="photo-item" data-category="urban" data-title="Your Title" data-date="2025"
            data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
-        <img src="Photos/_DSC1261.jpg" alt="Your Title" loading="lazy" />
+        <img src="../Photos/_DSC1261.jpg" alt="Your Title" loading="lazy" />
         <div class="photo-overlay">
           <p class="photo-title">Your Title</p>
           <p class="photo-meta">2025 · Urban</p>
@@ -618,7 +623,7 @@
       <!-- Photo 13 -->
             <div class="photo-item" data-category="people" data-title="Your Title" data-date="2025"
            data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
-        <img src="Photos/example.jpg" alt="Your Title" loading="lazy" />
+        <img src="../Photos/example.jpg" alt="Your Title" loading="lazy" />
         <div class="photo-overlay">
           <p class="photo-title">Your Title</p>
           <p class="photo-meta">2025 · People</p>
@@ -661,6 +666,15 @@
   </div>
 
   <script>
+    // ── Image fade-in on load ──
+    document.querySelectorAll('.photo-item img').forEach(img => {
+      if (img.complete) {
+        img.classList.add('loaded');
+      } else {
+        img.addEventListener('load', () => img.classList.add('loaded'));
+      }
+    });
+
     // ── Copyright year ──
     document.getElementById('year').textContent = new Date().getFullYear();
 
