@@ -28,7 +28,7 @@
       background: var(--bg);
       color: var(--text);
       font-family: 'Share Tech Mono', monospace;
-      font-size: 14px;
+      font-size: clamp(13px, 1.1vw, 16px);
       line-height: 1.7;
       min-height: 100vh;
     }
@@ -66,9 +66,9 @@
 
     /* ── Layout ── */
     .site-wrapper {
-      max-width: 1100px;
+      max-width: clamp(700px, 90vw, 1300px);
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 clamp(16px, 3vw, 48px);
       position: relative;
       z-index: 1;
     }
@@ -86,7 +86,7 @@
 
     .nav-name {
       font-family: 'Orbitron', monospace;
-      font-size: 16px;
+      font-size: clamp(14px, 1.4vw, 20px);
       font-weight: 700;
       letter-spacing: 0.12em;
       color: var(--cyan);
@@ -96,14 +96,14 @@
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      gap: clamp(16px, 2.5vw, 32px);
       list-style: none;
     }
 
     .nav-links a {
       color: var(--dim);
       text-decoration: none;
-      font-size: 11px;
+      font-size: clamp(10px, 0.9vw, 13px);
       letter-spacing: 0.12em;
       text-transform: uppercase;
       transition: color 0.2s, text-shadow 0.2s;
@@ -121,13 +121,13 @@
 
     /* ── Page header ── */
     .page-header {
-      padding: 72px 0 56px;
+      padding: clamp(40px, 6vw, 88px) 0 clamp(32px, 5vw, 64px);
       opacity: 0;
       animation: fadeUp 0.6s ease 0.1s forwards;
     }
 
     .page-label {
-      font-size: 11px;
+      font-size: clamp(10px, 0.9vw, 13px);
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--pink);
@@ -137,7 +137,7 @@
 
     .page-header h1 {
       font-family: 'Orbitron', monospace;
-      font-size: clamp(28px, 5vw, 46px);
+      font-size: clamp(24px, 4vw, 56px);
       font-weight: 900;
       letter-spacing: 0.04em;
       color: var(--text);
@@ -152,7 +152,7 @@
     }
 
     .page-desc {
-      font-size: 13px;
+      font-size: clamp(12px, 1vw, 15px);
       color: var(--dim);
       letter-spacing: 0.04em;
     }
@@ -170,11 +170,11 @@
 
     .filter-btn {
       font-family: 'Orbitron', monospace;
-      font-size: 10px;
+      font-size: clamp(9px, 0.8vw, 12px);
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      padding: 7px 16px;
+      padding: clamp(5px, 0.6vw, 9px) clamp(12px, 1.4vw, 20px);
       border: 1px solid var(--border);
       background: transparent;
       color: var(--dim);
@@ -198,9 +198,9 @@
     /* ── Photo grid ── */
     .photo-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(clamp(180px, 25vw, 360px), 1fr));
       gap: 3px;
-      padding: 48px 0;
+      padding: clamp(32px, 4vw, 56px) 0;
       opacity: 0;
       animation: fadeUp 0.6s ease 0.3s forwards;
     }
@@ -266,7 +266,7 @@
 
     .photo-title {
       font-family: 'Orbitron', monospace;
-      font-size: 11px;
+      font-size: clamp(10px, 0.9vw, 13px);
       font-weight: 700;
       letter-spacing: 0.1em;
       color: var(--text);
@@ -274,7 +274,7 @@
     }
 
     .photo-meta {
-      font-size: 10px;
+      font-size: clamp(9px, 0.75vw, 11px);
       color: var(--cyan);
       letter-spacing: 0.08em;
       text-shadow: 0 0 6px rgba(0,245,255,0.5);
@@ -346,7 +346,7 @@
     }
 
     .lightbox-caption .photo-title {
-      font-size: 13px;
+      font-size: clamp(12px, 1.1vw, 16px);
       margin-bottom: 4px;
     }
 
@@ -355,7 +355,7 @@
       top: 28px;
       right: 32px;
       font-family: 'Orbitron', monospace;
-      font-size: 11px;
+      font-size: clamp(10px, 0.9vw, 13px);
       font-weight: 700;
       letter-spacing: 0.12em;
       color: var(--dim);
@@ -372,6 +372,60 @@
       box-shadow: 0 0 12px rgba(255,45,120,0.3);
     }
 
+    /* ── EXIF bar ── */
+    .exif-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 12px 20px;
+      border: 1px solid var(--border);
+      background: rgba(0,245,255,0.03);
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .exif-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .exif-label {
+      font-size: clamp(8px, 0.7vw, 11px);
+      letter-spacing: 0.18em;
+      color: var(--dim);
+      text-transform: uppercase;
+    }
+
+    .exif-value {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(11px, 1vw, 14px);
+      font-weight: 700;
+      color: var(--cyan);
+      text-shadow: 0 0 8px rgba(0,245,255,0.4);
+      letter-spacing: 0.06em;
+    }
+
+    .exif-divider {
+      color: var(--border);
+      font-size: 16px;
+      margin-top: 6px;
+    }
+
+    .exif-camera .exif-value {
+      color: var(--yellow);
+      text-shadow: 0 0 8px rgba(255,230,0,0.3);
+      font-size: 11px;
+    }
+
+    @media (max-width: 560px) {
+      .exif-divider { display: none; }
+      .exif-bar { gap: 16px; }
+    }
+
     /* ── Footer ── */
     footer {
       border-top: 1px solid var(--border);
@@ -379,7 +433,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 11px;
+      font-size: clamp(10px, 0.85vw, 13px);
       color: var(--dim);
       letter-spacing: 0.1em;
       opacity: 0;
@@ -393,12 +447,24 @@
     }
 
     /* ── Responsive ── */
-    @media (max-width: 720px) {
-      .photo-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Tablet (600–900px) */
+    @media (max-width: 900px) {
+      nav { padding: 28px 0 40px; }
+      .page-header { padding: 40px 0 32px; }
     }
 
-    @media (max-width: 420px) {
-      .photo-grid { grid-template-columns: 1fr; }
+    /* Mobile (below 600px) */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 24px 0 32px;
+      }
+      .nav-links { gap: 14px; flex-wrap: wrap; }
+      .exif-divider { display: none; }
+      .exif-bar { gap: 16px; }
     }
   </style>
 </head>
@@ -432,6 +498,8 @@
       <button class="filter-btn" data-filter="nature">Nature</button>
       <button class="filter-btn" data-filter="urban">Urban</button>
       <button class="filter-btn" data-filter="people">People</button>
+      <button class="filter-btn" data-filter="animals">Animals</button>
+
     </div>
 
     <!-- Photo grid -->
@@ -439,66 +507,130 @@
     <div class="photo-grid" id="photoGrid">
 
       <!-- Photo 1 -->
-      <div class="photo-item" data-category="nature" data-title="Your Title" data-date="2025">
-        <img src="photos/photo1.jpg" alt="Your Title" loading="lazy" />
+      <!-- data-aperture, data-shutter, data-iso, data-focal, data-camera: fill in your settings -->
+      <div class="photo-item" data-category="nature" data-title="Your Title" data-date="2025"
+          data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
+        <img src="Photos/_DSC0843.jpg" alt="Your Title" loading="lazy" />
         <div class="photo-overlay">
           <p class="photo-title">Your Title</p>
           <p class="photo-meta">2025 · Nature</p>
         </div>
       </div>
-
       <!-- Photo 2 -->
-      <div class="photo-item" data-category="urban" data-title="Your Title" data-date="2025">
-        <img src="photos/photo2.jpg" alt="Your Title" loading="lazy" />
+      <div class="photo-item" data-category="urban" data-title="Your Title" data-date="2025"
+           data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
+        <img src="Photos/_DSC0864.jpg" alt="Your Title" loading="lazy" />
         <div class="photo-overlay">
           <p class="photo-title">Your Title</p>
           <p class="photo-meta">2025 · Urban</p>
         </div>
       </div>
-
       <!-- Photo 3 -->
-      <div class="photo-item" data-category="people" data-title="Your Title" data-date="2025">
-        <img src="photos/photo3.jpg" alt="Your Title" loading="lazy" />
+      <div class="photo-item" data-category="people" data-title="Your Title" data-date="2025"
+           data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
+        <img src="Photos/_DSC0869.jpg" alt="Your Title" loading="lazy" />
         <div class="photo-overlay">
           <p class="photo-title">Your Title</p>
           <p class="photo-meta">2025 · People</p>
         </div>
       </div>
-
       <!-- Photo 4 -->
-      <div class="photo-item" data-category="nature" data-title="Your Title" data-date="2025">
-        <img src="photos/photo4.jpg" alt="Your Title" loading="lazy" />
+      <div class="photo-item" data-category="nature" data-title="Your Title" data-date="2025"
+           data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
+        <img src="Photos/_DSC0901.jpg" alt="Your Title" loading="lazy" />
         <div class="photo-overlay">
           <p class="photo-title">Your Title</p>
           <p class="photo-meta">2025 · Nature</p>
         </div>
       </div>
-
       <!-- Photo 5 -->
-      <div class="photo-item" data-category="urban" data-title="Your Title" data-date="2025">
-        <img src="photos/photo5.jpg" alt="Your Title" loading="lazy" />
+      <div class="photo-item" data-category="urban" data-title="Your Title" data-date="2025"
+           data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
+        <img src="Photos/_DSC0944.jpg" alt="Your Title" loading="lazy" />
         <div class="photo-overlay">
           <p class="photo-title">Your Title</p>
           <p class="photo-meta">2025 · Urban</p>
         </div>
       </div>
-
       <!-- Photo 6 -->
-      <div class="photo-item" data-category="people" data-title="Your Title" data-date="2025">
-        <img src="photos/photo6.jpg" alt="Your Title" loading="lazy" />
+      <div class="photo-item" data-category="people" data-title="Your Title" data-date="2025"
+           data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
+        <img src="Photos/_DSC0957.jpg" alt="Your Title" loading="lazy" />
         <div class="photo-overlay">
           <p class="photo-title">Your Title</p>
           <p class="photo-meta">2025 · People</p>
         </div>
       </div>
-
+      <!-- Photo 7 -->
+            <div class="photo-item" data-category="urban" data-title="Your Title" data-date="2025"
+           data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
+        <img src="Photos/_DSC1054.jpg" alt="Your Title" loading="lazy" />
+        <div class="photo-overlay">
+          <p class="photo-title">Your Title</p>
+          <p class="photo-meta">2025 · Urban</p>
+        </div>
+      </div>
+      <!-- Photo 8 -->
+            <div class="photo-item" data-category="urban" data-title="Your Title" data-date="2025"
+           data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
+        <img src="Photos/_DSC1091.jpg" alt="Your Title" loading="lazy" />
+        <div class="photo-overlay">
+          <p class="photo-title">Your Title</p>
+          <p class="photo-meta">2025 · Urban</p>
+        </div>
+      </div>
+      <!-- Photo 9 -->
+            <div class="photo-item" data-category="urban" data-title="Your Title" data-date="2025"
+           data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
+        <img src="Photos/_DSC1140.jpg" alt="Your Title" loading="lazy" />
+        <div class="photo-overlay">
+          <p class="photo-title">Your Title</p>
+          <p class="photo-meta">2025 · Urban</p>
+        </div>
+      </div>
+      <!-- Photo 10 -->
+            <div class="photo-item" data-category="urban" data-title="Your Title" data-date="2025"
+           data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
+        <img src="Photos/_DSC1178.jpg" alt="Your Title" loading="lazy" />
+        <div class="photo-overlay">
+          <p class="photo-title">Your Title</p>
+          <p class="photo-meta">2025 · Urban</p>
+        </div>
+      </div>
+      <!-- Photo 11 -->
+            <div class="photo-item" data-category="urban" data-title="Your Title" data-date="2025"
+           data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
+        <img src="Photos/_DSC1241.jpg" alt="Your Title" loading="lazy" />
+        <div class="photo-overlay">
+          <p class="photo-title">Your Title</p>
+          <p class="photo-meta">2025 · Urban</p>
+        </div>
+      </div>
+      <!-- Photo 12 -->
+            <div class="photo-item" data-category="urban" data-title="Your Title" data-date="2025"
+           data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
+        <img src="Photos/_DSC1261.jpg" alt="Your Title" loading="lazy" />
+        <div class="photo-overlay">
+          <p class="photo-title">Your Title</p>
+          <p class="photo-meta">2025 · Urban</p>
+        </div>
+      </div>
+      <!-- Photo 13 -->
+            <div class="photo-item" data-category="people" data-title="Your Title" data-date="2025"
+           data-aperture="f/2.8" data-shutter="1/500s" data-iso="ISO 100" data-focal="50mm" data-camera="Sony A6700 · Tamron 18-300mm F3.5-6.3 Di III-A">
+        <img src="Photos/example.jpg" alt="Your Title" loading="lazy" />
+        <div class="photo-overlay">
+          <p class="photo-title">Your Title</p>
+          <p class="photo-meta">2025 · People</p>
+        </div>
+      </div>
       <!-- Add more photos above this line -->
 
     </div>
 
     <!-- Footer -->
     <footer>
-      <span>© <span id="year"></span> Will_Slowhike</span>
+      <span>© <span id="year"></span>Will_Slowhike</span>
       <span>Built by hand.</span>
     </footer>
 
@@ -512,6 +644,18 @@
       <div class="lightbox-caption">
         <p class="photo-title" id="lightboxTitle"></p>
         <p class="photo-meta" id="lightboxMeta"></p>
+      </div>
+      <!-- Camera settings panel -->
+      <div class="exif-bar" id="lightboxExif">
+        <span class="exif-item"><span class="exif-label">APERTURE</span><span class="exif-value" id="exifAperture">—</span></span>
+        <span class="exif-divider">·</span>
+        <span class="exif-item"><span class="exif-label">SHUTTER</span><span class="exif-value" id="exifShutter">—</span></span>
+        <span class="exif-divider">·</span>
+        <span class="exif-item"><span class="exif-label">ISO</span><span class="exif-value" id="exifIso">—</span></span>
+        <span class="exif-divider">·</span>
+        <span class="exif-item"><span class="exif-label">FOCAL</span><span class="exif-value" id="exifFocal">—</span></span>
+        <span class="exif-divider">·</span>
+        <span class="exif-item exif-camera"><span class="exif-label">CAMERA</span><span class="exif-value" id="exifCamera">—</span></span>
       </div>
     </div>
   </div>
@@ -538,20 +682,37 @@
     });
 
     // ── Lightbox ──
-    const lightbox     = document.getElementById('lightbox');
-    const lightboxImg  = document.getElementById('lightboxImg');
+    const lightbox      = document.getElementById('lightbox');
+    const lightboxImg   = document.getElementById('lightboxImg');
     const lightboxTitle = document.getElementById('lightboxTitle');
     const lightboxMeta  = document.getElementById('lightboxMeta');
     const lightboxClose = document.getElementById('lightboxClose');
+
+    // EXIF fields
+    const exifAperture = document.getElementById('exifAperture');
+    const exifShutter  = document.getElementById('exifShutter');
+    const exifIso      = document.getElementById('exifIso');
+    const exifFocal    = document.getElementById('exifFocal');
+    const exifCamera   = document.getElementById('exifCamera');
 
     photoItems.forEach(item => {
       if (item.classList.contains('empty')) return;
       item.addEventListener('click', () => {
         const img = item.querySelector('img');
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightboxTitle.textContent = item.dataset.title || '';
+        const d   = item.dataset;
+
+        lightboxImg.src           = img.src;
+        lightboxImg.alt           = img.alt;
+        lightboxTitle.textContent = d.title || '';
         lightboxMeta.textContent  = item.querySelector('.photo-meta')?.textContent || '';
+
+        // Populate EXIF
+        exifAperture.textContent = d.aperture || '—';
+        exifShutter.textContent  = d.shutter  || '—';
+        exifIso.textContent      = d.iso      || '—';
+        exifFocal.textContent    = d.focal    || '—';
+        exifCamera.textContent   = d.camera   || '—';
+
         lightbox.classList.add('open');
         document.body.style.overflow = 'hidden';
       });

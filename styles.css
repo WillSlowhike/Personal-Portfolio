@@ -20,7 +20,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Share Tech Mono', monospace;
-  font-size: 14px;
+  font-size: clamp(13px, 1.1vw, 16px);
   line-height: 1.7;
   min-height: 100vh;
 }
@@ -56,9 +56,9 @@ body::after {
 
 /* ── Layout ── */
 .site-wrapper {
-  max-width: 720px;
+  max-width: clamp(600px, 80vw, 1000px);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 clamp(16px, 3vw, 48px);
   position: relative;
   z-index: 1;
 }
@@ -76,7 +76,7 @@ nav {
 
 .nav-name {
   font-family: 'Orbitron', monospace;
-  font-size: 16px;
+  font-size: clamp(14px, 1.4vw, 20px);
   font-weight: 700;
   letter-spacing: 0.12em;
   color: var(--cyan);
@@ -86,14 +86,14 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 28px;
+  gap: clamp(16px, 2.5vw, 32px);
   list-style: none;
 }
 
 .nav-links a {
   color: var(--dim);
   text-decoration: none;
-  font-size: 11px;
+  font-size: clamp(10px, 0.9vw, 13px);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   transition: color 0.2s, text-shadow 0.2s;
@@ -106,13 +106,13 @@ nav {
 
 /* ── Bio ── */
 .bio {
-  padding: 80px 0 72px;
+  padding: clamp(48px, 7vw, 96px) 0 clamp(40px, 6vw, 80px);
   opacity: 0;
   animation: fadeUp 0.6s ease 0.1s forwards;
 }
 
 .bio-label {
-  font-size: 11px;
+  font-size: clamp(10px, 0.9vw, 13px);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--pink);
@@ -122,11 +122,11 @@ nav {
 
 .bio h1 {
   font-family: 'Orbitron', monospace;
-  font-size: clamp(28px, 5vw, 46px);
+  font-size: clamp(24px, 4vw, 56px);
   line-height: 1.15;
   font-weight: 900;
   margin-bottom: 28px;
-  max-width: 600px;
+  max-width: 700px;
   color: var(--text);
   letter-spacing: 0.04em;
 }
@@ -138,15 +138,15 @@ nav {
 }
 
 .bio-text {
-  max-width: 520px;
+  max-width: 600px;
   color: var(--dim);
-  font-size: 13px;
+  font-size: clamp(12px, 1vw, 15px);
   line-height: 1.9;
 }
 
 /* ── Sections ── */
 .section {
-  padding: 64px 0;
+  padding: clamp(40px, 5vw, 80px) 0;
   border-top: 1px solid var(--border);
   opacity: 0;
   animation: fadeUp 0.6s ease forwards;
@@ -156,12 +156,12 @@ nav {
   display: flex;
   align-items: baseline;
   gap: 16px;
-  margin-bottom: 40px;
+  margin-bottom: clamp(24px, 3vw, 48px);
 }
 
 .section-header h2 {
   font-family: 'Orbitron', monospace;
-  font-size: 20px;
+  font-size: clamp(16px, 1.8vw, 26px);
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--yellow);
@@ -169,7 +169,7 @@ nav {
 }
 
 .section-count {
-  font-size: 11px;
+  font-size: clamp(10px, 0.8vw, 12px);
   color: var(--dim);
   letter-spacing: 0.1em;
 }
@@ -221,7 +221,7 @@ nav {
 
 .project-name {
   font-family: 'Orbitron', monospace;
-  font-size: 14px;
+  font-size: clamp(12px, 1.2vw, 17px);
   font-weight: 700;
   letter-spacing: 0.06em;
   color: var(--text);
@@ -229,7 +229,7 @@ nav {
 }
 
 .project-desc {
-  font-size: 12px;
+  font-size: clamp(11px, 0.9vw, 14px);
   color: var(--dim);
   line-height: 1.7;
   margin-bottom: 14px;
@@ -242,7 +242,7 @@ nav {
 }
 
 .tag {
-  font-size: 10px;
+  font-size: clamp(9px, 0.7vw, 11px);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 3px 8px;
@@ -288,7 +288,7 @@ nav {
 
 .link-label {
   font-family: 'Orbitron', monospace;
-  font-size: 13px;
+  font-size: clamp(12px, 1.2vw, 16px);
   font-weight: 700;
   letter-spacing: 0.08em;
   color: var(--text);
@@ -296,7 +296,7 @@ nav {
 }
 
 .link-url {
-  font-size: 11px;
+  font-size: clamp(10px, 0.85vw, 13px);
   color: var(--dim);
   transition: color 0.2s;
   letter-spacing: 0.04em;
@@ -373,8 +373,27 @@ footer {
 .section:nth-of-type(4) { animation-delay: 0.45s; }
 
 /* ── Responsive ── */
-@media (max-width: 560px) {
+
+/* Tablet (600–900px) */
+@media (max-width: 900px) {
+  nav { padding: 28px 0 40px; }
+  .bio { padding: 48px 0 40px; }
+}
+
+/* Mobile (below 600px) */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px 0 32px;
+  }
+
+  .nav-links { gap: 16px; flex-wrap: wrap; }
+
   .contact-body { flex-direction: column; }
   .project-card { grid-template-columns: 1fr; }
   .project-arrow { display: none; }
+
+  .link-item { flex-direction: column; align-items: flex-start; gap: 2px; }
 }
