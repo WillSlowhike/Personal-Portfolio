@@ -49,6 +49,43 @@ body::after {
   z-index: 0;
 }
 
+.hero {
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  position: relative;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeUp 0.8s ease 0.05s forwards;
+}
+
+.hero img {
+  width: 100%;
+  height: clamp(300px, 80vh, 300px);
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.85);
+  transform: scale(1.06);
+  animation: heroZoom 1.4s ease forwards;
+  transition: transform 0.4s ease;
+}
+
+.hero img:hover {
+  transform: scale(1.03);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  @keyframes heroZoom {
+  from { transform: scale(1.06); }
+  to   { transform: scale(1); }
+}
+}
+
 @keyframes gridMove {
   from { background-position: 0 0; }
   to   { background-position: 40px 40px; }
