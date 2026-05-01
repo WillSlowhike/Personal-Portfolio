@@ -53,32 +53,28 @@ body::after {
   width: 100%;
   margin-top: 40px;
   margin-bottom: 40px;
-  overflow: hidden;
   border: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--surface);
+  overflow: visible;
 }
 
 .hero img {
   width: 100%;
-  height: clamp(200px, 40vh, 400px);
-  object-fit: cover;
+  height: auto;
   display: block;
+  object-fit: contain;
   filter: brightness(0.85);
-  transition: transform 0.4s ease;
-}
-
-.hero img:hover {
-  transform: scale(1.03);
 }
 
 .hero::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent, rgba(8,8,16,0.6));
-  @keyframes heroZoom {
-  from { transform: scale(1.06); }
-  to   { transform: scale(1); }
-}
+  background: linear-gradient(to bottom, transparent, rgba(8,8,16,0.35));
+  pointer-events: none;
 }
 
 @keyframes gridMove {
